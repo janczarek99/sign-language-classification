@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+	<title>Sign Language Classification</title>
+</head>
+
+<body>
+	<div id="container">
+	<h1>Sign language classification</h1>
+	<hr>
+	<div style="float: left; width: 45%;">
+		<form method="POST" action="{{ classification_endpoint }}" enctype="multipart/form-data">
+			<label>Photo to classify: <br>
+				<input type="file" name="{{ html_upload_field_name }}" accept="image/*">
+			</label> <br><br>
+			<input type="submit" name="sign-lang-submit" value="Classify">
+		</form>
+		
+	</div>
+	<div style="float: left; width: 55%;">
+		{% block main %}{% endblock %}
+	</div>
+	<div style="clear: both;"></div>
+</div>
+</body>
+
+</html>
