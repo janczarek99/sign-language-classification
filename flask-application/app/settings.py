@@ -1,4 +1,4 @@
-from pydantic import AnyUrl, BaseSettings, PostgresDsn, validator
+from pydantic import BaseSettings
 import os
 
 

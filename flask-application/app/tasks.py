@@ -11,14 +11,16 @@ async def get_result_from_azure(data):
 		"Content-Type": "application/octet-stream",
 		"Prediction-Key": settings.AZURE_CLASSIFICATION_API_KEY
 	}
-
-	async with aiohttp.ClientSession(headers=headers) as session:
-		async with session.post(settings.AZURE_CLASSIFICATION_ENDPOINT, data=data) as response:
-			if response.status == HTTPStatus.OK:				
-				json_response = await response.json()
-				return json_response.get("predictions", [])
-			else:
-				return None
+	try:
+		async with aiohttp.ClientSession(headers=headers) as session:
+			async with session.post(settings.AZURE_CLASSIFICATION_ENDPOINT, data=data) as response:
+				if response.status == HTTPStatus.OK:				
+					json_response = await response.json()
+					return json_response.get("predictions", [])
+	except:
+		pass
+	
+	return None
 
 async def get_predictions_above_threshold(predictions):
 	predictions_above_threshold = []
