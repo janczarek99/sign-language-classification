@@ -33,10 +33,10 @@
                             ],
                             "environmentVariables": [
                                 {
-                                    "name": "AZURE_CLASSIFICATION_API_KEY"
+                                    "name": "AZURE_CLASSIFICATION_ENDPOINT"
                                 },
                                 {
-                                    "name": "AZURE_CLASSIFICATION_ENDPOINT"
+                                    "name": "AZURE_CLASSIFICATION_API_KEY"
                                 }
                             ],
                             "resources": {
@@ -63,9 +63,9 @@
                             "port": 80
                         }
                     ],
-                    "ip": "40.74.4.64",
+                    "ip": "20.76.75.16",
                     "type": "Public",
-                    "dnsNameLabel": "sign-language-classification"
+                    "dnsNameLabel": "classify-sign"
                 },
                 "osType": "Linux"
             }
