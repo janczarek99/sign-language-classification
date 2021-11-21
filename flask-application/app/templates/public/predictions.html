@@ -16,13 +16,18 @@
 				</tr>
 			</thead>
 			<tbody>
-				{% for prediction in predictions %}
-				<tr>
-					<th scope="row">{{ loop.index }}</th>
-					<td>{{ prediction.letter }}</td>
-					<td>{{ prediction.value }}</td>
-				</tr>
-				{% endfor %}
+				{% if predictions|length > 0 %}
+					{% for prediction in predictions %}
+					<tr>
+						<th scope="row">{{ loop.index }}</th>
+						<td>{{ prediction.letter }}</td>
+						<td>{{ prediction.value }}</td>
+					</tr>
+					{% endfor %}
+				{% else %}
+					<div class="alert alert-danger" role="alert" style="width: 100%">There are no predictions for that particular photo!</div>
+				{% endif %}
+
 			</tbody>
 		</table>
     </p>
