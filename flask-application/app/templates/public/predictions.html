@@ -7,6 +7,7 @@
 	<img class="card-img-top" src="data:image/jpeg;base64,{{ uploaded_photo }}" alt="Uploaded photo">
 	<div class="card-body">
     <p class="card-text">
+    	{% if predictions|length > 0 %}
 		<table class="table classification-table">
 			<thead>
 				<tr>
@@ -16,7 +17,6 @@
 				</tr>
 			</thead>
 			<tbody>
-				{% if predictions|length > 0 %}
 					{% for prediction in predictions %}
 					<tr>
 						<th scope="row">{{ loop.index }}</th>
@@ -24,12 +24,11 @@
 						<td>{{ prediction.value }}</td>
 					</tr>
 					{% endfor %}
-				{% else %}
-					<div class="alert alert-danger" role="alert" style="width: 100%">There are no predictions for that particular photo!</div>
-				{% endif %}
-
 			</tbody>
 		</table>
+		{% else %}
+			<div class="alert alert-danger" role="alert" style="width: 100%">There are no predictions for that particular photo!</div>
+		{% endif %}
     </p>
   </div>
 </div>
