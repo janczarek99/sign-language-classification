@@ -32,7 +32,11 @@ Jak się okazało statyczna interpretacja znaków polskiego języka migowego jes
 
 ![wydajność](resources/images/performance.png)
 
-Otrzymany w wyniku model został opublikowany w formie API, dostępnego za podaniem klucza.
+Otrzymany w wyniku model został opublikowany w formie API, dostępnego za podaniem klucza. W celu umożliwienia interakcji z modelem powstała apliakcja webowa we Flask'u, która w formie kontenera została dodadna do serwisu Container Registry i tam zbudowana. Następnie przy pomocy serwisu Container Instances aplikacja została wdrożona.
+
+![strona](resources/images/website.png)
+
+Link do strony - <http://classify-sign.westeurope.azurecontainer.io/>
 
 ## Demo rozwiązania
 
