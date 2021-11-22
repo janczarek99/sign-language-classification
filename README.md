@@ -1,8 +1,8 @@
-# Sign-Language-Classification
+# Polish-Sign-Language-Classification
 
 ## Cel projektu
 
-Celem projektu było stworzenie serwisu do rozpoznawania alfabetu migowego na podstawie przesłanego zdjęcia (możliwe formaty: .jpg, .png, .bmp).
+Celem projektu było stworzenie serwisu do rozpoznawania polskiego alfabetu migowego na podstawie przesłanego zdjęcia (możliwe formaty: .jpg, .png, .bmp).
 
 ## Skład zespołu
 
@@ -22,6 +22,18 @@ Celem projektu było stworzenie serwisu do rozpoznawania alfabetu migowego na po
 
 ![architektura](resources/architecture/architecture.svg)
 
+## Sposób działania
+
+Główną częscią aplikacji jest serwis Custom Vision, który przetwarza obrazy przy pomocy klasyfikacji wieloklasowej, która pozwala przypisać jednemu obrazowi dokładnie jedną klasę. W celu wyuczenia modelu do rozpoznawania polskiego języka migowego stworzony został specjalny zbiór danych, którego przeważająca większość obrazów pochodzi ze zbioru udostępnionego na stonie [dataverse.harvard.edu](https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/K142HP), a także własnych przeszukiwań internetu. Zdjęcia zostały załadowane so serwisu Custom Vision, a następnie otagowane.
+
+![obrazy treningowe](resources/images/training-images.png)
+
+Jak się okazało statyczna interpretacja znaków polskiego języka migowego jest właściwie niewykonalna, gdyż różnice między znakami diaktrycznymi, a ich odpowiednikami wynikają z ruchu ręki. W związku z tym model został uproszczony do rozpoznawania podsawowych znaków (a, b, c..., z). Następnie model został wytrenowany.
+
+![wydajność](resources/images/performance.png)
+
+Otrzymany w wyniku model został opublikowany w formie API, dostępnego za podaniem klucza.
+
 ## Demo rozwiązania
 
 [![demo](resources/images/thumbnail.png)](https://www.youtube.com/watch?v=aSBm_2dLl_I)
@@ -32,8 +44,8 @@ Poniżej znajdują się dwa przyciski, które służą do szybkiego wdrożenia s
 
 ### Custom Vision
 
-[![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fjanczarek99%2Fsign-language-classification%2Fmain%2Fresources%2Fazure-deploy-templates%2Fcustom-vision-template.json)
+[![wdróż na azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fjanczarek99%2Fsign-language-classification%2Fmain%2Fresources%2Fazure-deploy-templates%2Fcustom-vision-template.json)
 
 ### Container Services
 
-[![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fjanczarek99%2Fsign-language-classification%2Fmain%2Fresources%2Fazure-deploy-templates%2Fcontainers-template.json)
+[![wdróż na azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fjanczarek99%2Fsign-language-classification%2Fmain%2Fresources%2Fazure-deploy-templates%2Fcontainers-template.json)
