@@ -24,4 +24,4 @@ Celem projektu było stworzenie serwisu do rozpoznawania alfabetu migowego na po
 
 ## Diagram architektury
 
-![architektura](resources/architecture.svg)
+![architektura](resources/architecture/architecture.svg)
