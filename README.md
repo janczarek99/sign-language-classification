@@ -44,7 +44,7 @@ Link do strony - <http://classify-sign.westeurope.azurecontainer.io/>
 
 ## Reprodukcja rozwiązania
 
-Poniżej znajdują się dwa przyciski, które służą do szybkiego wdrożenia serwisów użytych do stworzenia aplikacji, przy użyciu szablonów ARM (Azure Resource Manager). Do stworzenia kontenera wystarczy sklonować to repozytorium i użyć Dockerfile'a. Dane dla serwisu Custom Vision natomiast są po [linkiem](https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/K142HP).
+Poniżej znajdują się dwa przyciski, które służą do szybkiego wdrożenia serwisów użytych do stworzenia aplikacji, przy użyciu szablonów ARM (Azure Resource Manager). Do stworzenia kontenera wystarczy sklonować to repozytorium i użyć Dockerfile'a. Dane dla serwisu Custom Vision natomiast są pod tym [linkiem](https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/K142HP).
 
 ### Custom Vision
 
